@@ -31,7 +31,7 @@ public class HoleScoreDisplay implements Observer{
 		displayCurrentScore();
 	}
 	/**
-	 * This displays the score and appends statements as well
+	 * This displays the score and appends statements as well using the difference
 	 */
 	public void displayCurrentScore() {
 		System.out.print("\nCurrent Hole stats");

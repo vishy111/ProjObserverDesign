@@ -32,7 +32,7 @@ public class RoundScoreDisplay implements Observer{
 		displayRoundScore();
 	}
 	/**
-	 * This displays the score and appends statements as well
+	 * This displays the score and appends statements as well using the difference
 	 */
 	public void displayRoundScore() {
 		System.out.print("\nCurrent Hole stats ");
