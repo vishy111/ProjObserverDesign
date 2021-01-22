@@ -34,22 +34,18 @@ public class HoleScoreDisplay implements Observer{
 	 * This displays the score and appends statements as well
 	 */
 	public void displayCurrentScore() {
-		System.out.print("Current Hole stats");
+		System.out.print("\nCurrent Hole stats");
 		
 		System.out.println(" \nPar: "+ par + "\nStrokes: " + strokes);
 		
-		Random rand=new Random();
-		int choice=rand.nextInt(3);
-		if(choice== 0)
+		int diff =0;
+		diff = par - strokes;
+		if(diff==0)
+			System.out.println("Made par");
+		else if(diff < 0)
+			System.out.println(Math.abs(diff) + " over par");
+		else if(diff>0)
+			System.out.println(diff + " under par");		
 		
-			System.out.println(" x Made par");
-		
-		else if(choice == 1)
-		
-			System.out.println(" x under par");
-		
-		else if (choice == 2)
-		
-			System.out.println(" x over par");
 	}
 }

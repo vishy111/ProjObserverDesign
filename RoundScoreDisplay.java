@@ -20,7 +20,7 @@ public class RoundScoreDisplay implements Observer{
 	 */
 	public RoundScoreDisplay(Subject golfer) {
 		this.golfer=golfer;
-		//golfer.registerObserver(this);
+		golfer.registerObserver(this);
 	}
 	/**
 	 * This method updates the strokesTotal, and parTotal
@@ -35,22 +35,17 @@ public class RoundScoreDisplay implements Observer{
 	 * This displays the score and appends statements as well
 	 */
 	public void displayRoundScore() {
-		System.out.print("Current Hole stats \n");
+		System.out.print("\nCurrent Hole stats ");
 		
 		System.out.println(" \nPar: "+ parTotal + "\nStrokes:  " + strokesTotal);
-		
-		Random rand=new Random();
-		int choice=rand.nextInt(3);
-		if(choice== 0)
-		
-			System.out.println(" Made par");
-		
-		else if(choice == 1)
-		
-			System.out.println(" x under par");
-		
-		else if (choice == 2)
-		
-			System.out.println(" x over par");
+	
+		int diff =0;
+		diff = parTotal - strokesTotal;
+		if(diff==0)
+			System.out.println("Made par");
+		else if(diff < 0)
+			System.out.println(Math.abs(diff) + " over par");
+		else if(diff>0)
+			System.out.println(diff + " under par");
 	}
 }
